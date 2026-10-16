@@ -114,5 +114,15 @@ team:{title:'Team discussion activity',q:'What helps metals conduct electricity?
 document.querySelectorAll('[data-round]').forEach(b=>b.addEventListener('click',()=>{let r=rounds[b.dataset.round],box=$('round-content');box.dataset.done='';box.innerHTML='<span class="pill">LIVE PRACTICE</span><h3>'+r.title+'</h3><p>'+r.q+'</p><div>'+r.answers.map((a,i)=>'<button class="choice" data-ra="'+i+'">'+String.fromCharCode(65+i)+'. '+a+'</button>').join('')+'</div><div id="round-result" aria-live="polite"></div>';box.querySelectorAll('[data-ra]').forEach(c=>c.addEventListener('click',()=>{if(box.dataset.done)return;box.dataset.done='1';let ok=+c.dataset.ra===r.correct;box.querySelectorAll('[data-ra]').forEach(x=>{x.disabled=true;if(+x.dataset.ra===r.correct)x.classList.add('selected')});$('round-result').innerHTML='<div class="notice">'+(ok?'Correct! ':'Review this one. ')+r.why+'</div><button class="btn mt" id="round-again">Choose another round</button>';$('round-again').addEventListener('click',()=>{box.innerHTML='<strong>Choose a training format</strong><p class="muted">Select a round above to begin another challenge.</p>'})}))}));
 })();
 </script>
+  <section style="padding:24px;text-align:center">
+  <h2>JSHTS NSMQ Team Registration</h2>
+  <p>Register to join our NSMQ team!</p>
+  <a href="PASTE_YOUR_TALLY_LINK_HERE"
+     target="_blank"
+     rel="noopener noreferrer"
+     style="display:inline-block;padding:14px 22px;background:#16845b;color:white;border-radius:10px;text-decoration:none;font-weight:bold">
+    Register Now
+  </a>
+</section>
 </body>
 </html>
